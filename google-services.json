@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "50936300949",
+    "firebase_url": "https://spotinder-44a55.firebaseio.com",
+    "project_id": "spotinder-44a55",
+    "storage_bucket": "spotinder-44a55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50936300949:android:72262e0e55f381aa",
+        "android_client_info": {
+          "package_name": "com.spotinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50936300949-qg2m5urigpfuest3gs5bupca29ssitmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8DEef2fJTLjYUNV0-YYN6UbM79mQr3h0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
