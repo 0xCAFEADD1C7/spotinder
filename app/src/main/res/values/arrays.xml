@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex_options">
+        <item>@string/men</item>
+        <item>@string/women</item>
+        <item>@string/both</item>
+    </string-array>
+    <string-array name="contact_options">
+        <item>@string/phone</item>
+        <item>@string/email</item>
+    </string-array>
+</resources>

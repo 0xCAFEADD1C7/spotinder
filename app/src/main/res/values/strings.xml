@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Spotinder</string>
+    <string name="title_activity_match_list">Mes matches</string>
+    <string name="no_matches">Vous n\'avez pas de matches pour le moment... Ecoutez donc un peu de musique !</string>
+    <string name="welcome">Bienvenue !</string>
+    <string name="need_to_login">Connectez vous à votre compte Spotify pour pouvoir utiliser l\'application et rencontrer des gens avec les mêmes gouts que vous !</string>
+    <string name="login">Se connecter</string>
+    <string name="settings">Paramètres de l\'application</string>
+    <string name="prefered_sex">Préférences de sexe</string>
+    <string name="prefered_sex_desc">L\'application vous montrera uniquement des personnes du sexe demandé</string>
+    <string name="men">Hommes</string>
+    <string name="women">Femmes</string>
+    <string name="both">Les deux</string>
+    <string name="disable_app_desc">Vous permet de ne plus recevoir de notifications</string>
+    <string name="contact_type">Comment me contacter</string>
+    <string name="contact_type_desc">Indiquez quel est votre moyen de contact préféré</string>
+    <string name="phone">Téléphone</string>
+    <string name="email">Email</string>
 </resources>
