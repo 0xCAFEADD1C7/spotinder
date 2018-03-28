@@ -16,4 +16,8 @@
     <string name="contact_type_desc">Indiquez quel est votre moyen de contact préféré</string>
     <string name="phone">Téléphone</string>
     <string name="email">Email</string>
+
+    <string name="com_spotify_sdk_redirect_scheme">aymeric1234</string>
+    <string name="com_spotify_sdk_redirect_host">authentication</string>
+    <string name="com_spotify_client_id">72250b72093b4be8aad8743e5e368338</string>
 </resources>

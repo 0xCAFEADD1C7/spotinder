@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.spotinder">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +11,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".MainActivity" android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:scheme="@string/com_spotify_sdk_redirect_scheme"
+                    android:host="@string/com_spotify_sdk_redirect_host"/>
+            </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings" />
+
+        <!-- SPOTIFY RELATED ACTIVITIES/BROADCAST RECEIVER -->
+        <!--<activity-->
+            <!--android:exported="true"-->
+            <!--android:name="com.spotify.sdk.android.authentication.AuthCallbackActivity"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar">-->
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW"/>-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+                <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+
+                <!--<data-->
+                    <!--android:scheme="@string/com_spotify_sdk_redirect_scheme"-->
+                    <!--android:host="@string/com_spotify_sdk_redirect_host"/>-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <activity
+            android:name="com.spotify.sdk.android.authentication.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <receiver
             android:name=".SpotifyEventHandler"
@@ -27,13 +64,6 @@
                 <action android:name="com.spotify.music.queuechanged" />
             </intent-filter>
         </receiver>
-
-        <activity
-            android:name=".MatchListActivity"
-            android:label="@string/title_activity_match_list" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="Settings" />
     </application>
 
 </manifest>
