@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.util.Log;
 
 public class SpotifyEventHandler extends BroadcastReceiver {
+    static final String TAG = "SpotifyEventHandler";
+
     static final class BroadcastTypes {
         static final String SPOTIFY_PACKAGE = "com.spotify.music";
         static final String PLAYBACK_STATE_CHANGED = SPOTIFY_PACKAGE + ".playbackstatechanged";
@@ -25,7 +27,10 @@ public class SpotifyEventHandler extends BroadcastReceiver {
             String albumName = intent.getStringExtra("album");
             String trackName = intent.getStringExtra("track");
 
-            Log.d("DEBUG", trackId+", "+artistName+", "+albumName+", "+trackName);
+            //TODO change user id
+            FirebaseManager.addTrackListening(trackId, "123456");
+
+            Log.d(TAG, "Track info : "+trackId+", "+artistName+", "+albumName+", "+trackName);
         }
 
 
