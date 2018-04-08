@@ -12,6 +12,7 @@ public class Match implements Serializable {
     private String matchTitle = "";
     private String contactType = "";
     private String contactData = "";
+    private double random = 0;
 
     public Match(String picture, String name, String matchTitle) {
         this.picture = picture;
@@ -71,5 +72,13 @@ public class Match implements Serializable {
 
     public void setContactData(String contactData) {
         this.contactData = contactData;
+    }
+
+    public double getRandom() {
+        return random;
+    }
+
+    public void setRandom(double random) {
+        this.random = random;
     }
 }

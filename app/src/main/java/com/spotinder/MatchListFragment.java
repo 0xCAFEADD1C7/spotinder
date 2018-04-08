@@ -90,10 +90,8 @@ public class MatchListFragment extends Fragment {
                 }
 
                 List<Match> matches = queryDocumentSnapshots.toObjects(Match.class);
-                for(Match m : matches) {
-                    Log.d(TAG, "onEvent: MATCH : "+m);
-                    adapter.add(m);
-                }
+                adapter.clear();
+                adapter.addAll(matches);
             }
         });
     }

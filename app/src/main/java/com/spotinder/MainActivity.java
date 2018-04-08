@@ -190,9 +190,9 @@ public class MainActivity extends AppCompatActivity {
         final String dispName = userInfo.display_name;
         final String email = userInfo.email;
 
-        String pictureUrl = userInfo.images.size() > 0
+        final String pictureUrl = userInfo.images.size() > 0
                 ? userInfo.images.get(0).url
-                : null;
+                : "https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/girl-512.png";
 
         FirebaseManager.getUserInfo(uid, new OnSuccessListener<UserInfo>() {
             @Override
@@ -213,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
                 // update some settings from spotify api
                 userInfo.setEmail(email);
                 userInfo.setDispName(dispName);
+                userInfo.setPictureUrl(pictureUrl);
 
                 Preferences.saveUserInfo(userInfo, context, true);
             }

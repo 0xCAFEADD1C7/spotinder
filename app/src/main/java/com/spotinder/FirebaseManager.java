@@ -79,7 +79,7 @@ public class FirebaseManager {
 
     public static void getUserInfo(String uid, final OnSuccessListener<UserInfo> callback) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference userInfo = db.collection("userInfos");
+        CollectionReference userInfo = db.collection("usersInfos");
         userInfo.document(uid).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
