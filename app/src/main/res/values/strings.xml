@@ -11,6 +11,9 @@
     <string name="men">Hommes</string>
     <string name="women">Femmes</string>
     <string name="both">Les deux</string>
+    <string name="male">Homme</string>
+    <string name="female">Femme</string>
+    <string name="other">Autre</string>
     <string name="disable_app_desc">Vous permet de ne plus recevoir de notifications</string>
     <string name="contact_type">Comment me contacter</string>
     <string name="contact_type_desc">Indiquez quel est votre moyen de contact préféré</string>
@@ -21,10 +24,13 @@
     <string name="com_spotify_sdk_redirect_host">authentication</string>
     <string name="com_spotify_client_id">72250b72093b4be8aad8743e5e368338</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="preference_file_key">spotinder_preferences</string>
     <string name="spotify_api_error">Une erreur est survenue lors de la récupération des données sur Spotify</string>
     <string name="spotify_auth_error">Une erreur est survenue pendant la phase d\'authentifcation</string>
     <string name="login_ok">Bienvenue</string>
     <string name="contact">Contacter !</string>
+
+    <string name="my_sex">Mon sexe</string>
+    <string name="my_sex_desc">Etes vous un homme, une femme, ... ?</string>
+    <string name="phone_desc">Le numéro de téléphone sur lequel vous souhaitez être contacté. Laissez vide si vous préférez être joints par email.</string>
 </resources>

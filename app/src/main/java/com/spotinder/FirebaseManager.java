@@ -77,7 +77,18 @@ public class FirebaseManager {
         addCallbacks(t, "track infos");
     }
 
-    public static <T> void addCallbacks(Task<T> task, final String objName){
+    public static void getUserInfo(String uid, final OnSuccessListener<UserInfo> callback) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference userInfo = db.collection("userInfos");
+        userInfo.document(uid).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                callback.onSuccess(documentSnapshot.toObject(UserInfo.class));
+            }
+        });
+    }
+
+    private static <T> void addCallbacks(Task<T> task, final String objName){
         task
                 .addOnSuccessListener(new OnSuccessListener<T>() {
                     @Override

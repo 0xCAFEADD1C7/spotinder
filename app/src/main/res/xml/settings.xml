@@ -5,11 +5,19 @@
         android:title="Matching">
 
         <ListPreference
-            android:key="prefered_sex"
+            android:key="PREF_WANTED_SEX"
             android:title="@string/prefered_sex"
             android:summary="@string/prefered_sex_desc"
-            android:entries="@array/sex_options"
-            android:entryValues="@array/sex_options"
+            android:entries="@array/my_sex_options_values"
+            android:entryValues="@array/my_sex_options_keys"
+            />
+
+        <ListPreference
+            android:key="PREF_MY_SEX"
+            android:title="@string/my_sex"
+            android:summary="@string/my_sex_desc"
+            android:entries="@array/my_sex_options_values"
+            android:entryValues="@array/my_sex_options_keys"
             />
 
     </PreferenceCategory>
@@ -18,16 +26,17 @@
         android:title="Contact">
 
         <ListPreference
-            android:key="contact_type"
+            android:key="PREF_CONTACT_TYPE"
             android:title="@string/contact_type"
             android:summary="@string/contact_type_desc"
-            android:entries="@array/contact_options"
-            android:entryValues="@array/contact_options"
+            android:entries="@array/contact_options_values"
+            android:entryValues="@array/contact_options_keys"
             />
 
         <EditTextPreference
-            android:key="contact_info"
-            android:id="@+id/phone_or_email"
+            android:key="PREF_PHONE"
+            android:title="@string/phone"
+            android:summary="@string/phone_desc"
             />
 
     </PreferenceCategory>

@@ -7,14 +7,17 @@ import java.io.Serializable;
  */
 
 public class UserInfo implements Serializable {
-    private String uid;
-    private String dispName;
-    private String phone;
-    private String email;
-    private String pictureUrl;
-    private String matchPref;
-    private String sex;
-    private String contact;
+    private String uid = "";
+
+    private String dispName = "";
+    private String pictureUrl = "";
+
+    private String contactType = "";
+    private String phone = "";
+    private String email = "";
+
+    private String sex = "";
+    private String wantedSex = "";
 
     public String getPhone() {
         return phone;
@@ -56,14 +59,6 @@ public class UserInfo implements Serializable {
         this.dispName = dispName;
     }
 
-    public String getMatchPref() {
-        return matchPref;
-    }
-
-    public void setMatchPref(String matchPref) {
-        this.matchPref = matchPref;
-    }
-
     public String getSex() {
         return sex;
     }
@@ -72,11 +67,19 @@ public class UserInfo implements Serializable {
         this.sex = sex;
     }
 
-    public String getContact() {
-        return contact;
+    public String getContactType() {
+        return contactType;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setContactType(String contactType) {
+        this.contactType = contactType;
+    }
+
+    public String getWantedSex() {
+        return wantedSex;
+    }
+
+    public void setWantedSex(String wantedSex) {
+        this.wantedSex = wantedSex;
     }
 }

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
 import com.spotify.sdk.android.authentication.AuthenticationResponse;
@@ -184,32 +185,38 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onUserInfo(UserPrivate userInfo) {
         Log.d(TAG, "onUserInfo: here");
-        Context context = getApplicationContext();
-        SharedPreferences sharedPref = Preferences.getPrefs(getApplicationContext());
 
-        String uid = userInfo.id;
-        String dispName = userInfo.display_name;
-//        String birthDate = userInfo.birthdate;
-        String email = userInfo.email;
+        final String uid = userInfo.id;
+        final String dispName = userInfo.display_name;
+        final String email = userInfo.email;
 
         String pictureUrl = userInfo.images.size() > 0
                 ? userInfo.images.get(0).url
                 : null;
 
-        // update local preferences
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(Preferences.PREF_SPOTIFY_UID, uid);
-        editor.putString(Preferences.PREF_DISPLAY_NAME, dispName);
-        editor.putString(Preferences.PREF_EMAIL, email);
-        editor.commit();
+        FirebaseManager.getUserInfo(uid, new OnSuccessListener<UserInfo>() {
+            @Override
+            public void onSuccess(UserInfo userInfo) {
+                Context context = getApplicationContext();
+                SharedPreferences sharedPref = Preferences.getPrefs(context);
 
-        // update firebase infos about user
-        UserInfo uInfo = new UserInfo();
-        uInfo.setUid(uid);
-        uInfo.setDispName(dispName);
-        uInfo.setEmail(email);
-        uInfo.setPictureUrl(pictureUrl);
-        FirebaseManager.saveUserInfos(uInfo);
+                // if user has no preferences (= first login), create default ones
+                if (userInfo == null) {
+                    Log.d(TAG, "onSuccess: no user info.");
+                    userInfo = new UserInfo();
+                    userInfo.setContactType("EMAIL");
+                    userInfo.setUid(uid);
+                } else {
+                    Log.d(TAG, "onSuccess: got user infos "+userInfo);
+                }
+
+                // update some settings from spotify api
+                userInfo.setEmail(email);
+                userInfo.setDispName(dispName);
+
+                Preferences.saveUserInfo(userInfo, context, true);
+            }
+        });
     }
 
     protected void toastError(int stringId, Exception error) {

@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="sex_options">
+    <string-array name="prefered_sex_options_values">
         <item>@string/men</item>
         <item>@string/women</item>
         <item>@string/both</item>
     </string-array>
-    <string-array name="contact_options">
+    <string-array name="prefered_sex_options_keys">
+        <item>MEN</item>
+        <item>WOMEN</item>
+        <item>BOTH</item>
+    </string-array>
+    <string-array name="my_sex_options_values">
+        <item>@string/male</item>
+        <item>@string/female</item>
+        <item>@string/other</item>
+    </string-array>
+    <string-array name="my_sex_options_keys">
+        <item>MALE</item>
+        <item>FEMALE</item>
+        <item>OTHER</item>
+    </string-array>
+    <string-array name="contact_options_values">
         <item>@string/phone</item>
         <item>@string/email</item>
+    </string-array>
+    <string-array name="contact_options_keys">
+        <item>PHONE</item>
+        <item>EMAIL</item>
     </string-array>
 </resources>
