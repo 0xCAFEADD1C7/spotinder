@@ -20,4 +20,11 @@
     <string name="com_spotify_sdk_redirect_scheme">aymeric1234</string>
     <string name="com_spotify_sdk_redirect_host">authentication</string>
     <string name="com_spotify_client_id">72250b72093b4be8aad8743e5e368338</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="preference_file_key">spotinder_preferences</string>
+    <string name="spotify_api_error">Une erreur est survenue lors de la récupération des données sur Spotify</string>
+    <string name="spotify_auth_error">Une erreur est survenue pendant la phase d\'authentifcation</string>
+    <string name="login_ok">Bienvenue</string>
+    <string name="contact">Contacter !</string>
 </resources>

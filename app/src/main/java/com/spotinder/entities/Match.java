@@ -1,17 +1,43 @@
 package com.spotinder.entities;
 
-import android.graphics.drawable.Drawable;
+import java.io.Serializable;
 
 /**
  * Created by aymeric on 15/03/2018.
  */
 
-public class Match {
-    public Drawable getPicture() {
+public class Match implements Serializable {
+    private String picture = "";
+    private String name = "";
+    private String matchTitle = "";
+    private String contactType = "";
+    private String contactData = "";
+
+    public Match(String picture, String name, String matchTitle) {
+        this.picture = picture;
+        this.name = name;
+        this.matchTitle = matchTitle;
+    }
+
+    @Override
+    public String toString() {
+        return "Match{" +
+                "picture='" + picture + '\'' +
+                ", name='" + name + '\'' +
+                ", matchTitle='" + matchTitle + '\'' +
+                ", contactType='" + contactType + '\'' +
+                ", contactData='" + contactData + '\'' +
+                '}';
+    }
+
+    public Match() {
+    }
+
+    public String getPicture() {
         return picture;
     }
 
-    public void setPicture(Drawable picture) {
+    public void setPicture(String picture) {
         this.picture = picture;
     }
 
@@ -31,13 +57,19 @@ public class Match {
         this.matchTitle = matchTitle;
     }
 
-    public Match(Drawable picture, String name, String matchTitle) {
-        this.picture = picture;
-        this.name = name;
-        this.matchTitle = matchTitle;
+    public String getContactType() {
+        return contactType;
     }
 
-    private Drawable picture;
-    private String name;
-    private String matchTitle;
+    public void setContactType(String contactType) {
+        this.contactType = contactType;
+    }
+
+    public String getContactData() {
+        return contactData;
+    }
+
+    public void setContactData(String contactData) {
+        this.contactData = contactData;
+    }
 }

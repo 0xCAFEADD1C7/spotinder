@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.spotinder.MatchFragment">
+
+    <!--<include layout="@layout/title_bar"/>-->
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:layout_gravity="bottom"
+        android:src="@drawable/ic_launcher_background"
+        android:paddingLeft="54dp"
+        android:paddingRight="54dp"
+        android:id="@+id/matchImageView"
+       />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/primaryFont"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="@string/hello_blank_fragment"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/matchTitleTextView"
+        style="@style/secondaryFont"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="@string/hello_blank_fragment"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/contact"
+        android:id="@+id/contact_btn"
+        />
+
+</LinearLayout>
