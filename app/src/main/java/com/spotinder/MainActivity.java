@@ -42,15 +42,14 @@ public class MainActivity extends AppCompatActivity {
     SpotifyService spotifyService;
     SpotifyApi spotifyApi = new SpotifyApi();
 
+    private boolean isLoggedIn = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.main_activity);
         setSupportActionBar((Toolbar) findViewById(R.id.titleBar));
-
-        // if user is logged in, we load his list from disk.
-        // then try to refresh info from firestore
 
         SharedPreferences prefs = Preferences.getPrefs(getApplicationContext());
         String uid = prefs.getString(Preferences.PREF_SPOTIFY_UID, null);
@@ -159,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
                         public void success(UserPrivate user, Response response) {
                             toastOk(R.string.login_ok, " "+user.display_name+" !");
                             onUserInfo(user);
+
+                            Log.d(TAG, "success: calling recreate");
                         }
 
                         @Override
@@ -216,6 +217,8 @@ public class MainActivity extends AppCompatActivity {
                 userInfo.setPictureUrl(pictureUrl);
 
                 Preferences.saveUserInfo(userInfo, context, true);
+                finish();
+                startActivity(getIntent());
             }
         });
     }
